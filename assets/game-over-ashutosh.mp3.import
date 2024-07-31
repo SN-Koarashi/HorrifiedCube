@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/game-over-ashutosh.mp3-c32e5e3788100dc2b607983c880783f1.mp3str"
+
+[deps]
+
+source_file="res://assets/game-over-ashutosh.mp3"
+dest_files=[ "res://.import/game-over-ashutosh.mp3-c32e5e3788100dc2b607983c880783f1.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

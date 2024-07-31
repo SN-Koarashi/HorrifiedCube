@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/haus-guest-gunnar.mp3-e98562bf207b456409094b801fdb61aa.mp3str"
+
+[deps]
+
+source_file="res://assets/haus-guest-gunnar.mp3"
+dest_files=[ "res://.import/haus-guest-gunnar.mp3-e98562bf207b456409094b801fdb61aa.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

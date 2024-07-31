@@ -1,0 +1,123 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://src/actor/PlatTrap.gd" type="Script" id=1]
+[ext_resource path="res://assets/tile.png" type="Texture" id=2]
+[ext_resource path="res://assets/trap.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 89.8913, 10.0976 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 91.6987, 12.0944 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 89.7322, 7.90622 )
+
+[node name="PlatTrap" type="KinematicBody2D"]
+collision_layer = 2
+collision_mask = 11
+script = ExtResource( 1 )
+speed = Vector2( 0, 125 )
+gra = 25.0
+
+[node name="PlatTrap" type="Sprite" parent="."]
+position = Vector2( -0.111357, 0.0182819 )
+scale = Vector2( 11.2073, 1.24037 )
+texture = ExtResource( 2 )
+
+[node name="trap" type="Sprite" parent="PlatTrap"]
+position = Vector2( -6.88976, 14.9002 )
+rotation = -3.14159
+scale = Vector2( 0.0312296, 0.282174 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="trap2" type="Sprite" parent="PlatTrap"]
+position = Vector2( -4.76757, 14.9002 )
+rotation = -3.14159
+scale = Vector2( 0.0312296, 0.282174 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="trap3" type="Sprite" parent="PlatTrap"]
+position = Vector2( -2.52966, 14.9002 )
+rotation = -3.14159
+scale = Vector2( 0.0312296, 0.282174 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="trap4" type="Sprite" parent="PlatTrap"]
+position = Vector2( -0.267294, 14.9002 )
+rotation = -3.14159
+scale = Vector2( 0.0312296, 0.282174 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="trap5" type="Sprite" parent="PlatTrap"]
+position = Vector2( 2.05744, 14.9002 )
+rotation = -3.14159
+scale = Vector2( 0.0312296, 0.282174 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="trap6" type="Sprite" parent="PlatTrap"]
+position = Vector2( 4.32195, 14.9002 )
+rotation = -3.14159
+scale = Vector2( 0.0312296, 0.282174 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="trap7" type="Sprite" parent="PlatTrap"]
+position = Vector2( 6.7335, 14.9002 )
+rotation = -3.14159
+scale = Vector2( 0.0312296, 0.282174 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 0, -4 )
+shape = SubResource( 2 )
+
+[node name="HitBox" type="Area2D" parent="."]
+collision_layer = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+modulate = Color( 0.72549, 0.137255, 0.286275, 1 )
+self_modulate = Color( 0.0980392, 0.662745, 0.811765, 1 )
+position = Vector2( 0, 17.0273 )
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="HitBox" to="." method="_on_HitBox_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

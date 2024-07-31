@@ -1,0 +1,140 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/actor/Plat.gd" type="Script" id=1]
+[ext_resource path="res://assets/tile.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 89.8913, 10.0976 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 91.6987, 12.0944 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 1, 0, 0, 1 )
+
+[node name="Plat" type="KinematicBody2D"]
+collision_layer = 2
+collision_mask = 11
+script = ExtResource( 1 )
+speed = Vector2( 0, -500 )
+gra = 25.0
+
+[node name="Plat" type="Sprite" parent="."]
+position = Vector2( -0.111357, 0.0182819 )
+scale = Vector2( 11.2073, 1.24037 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 10
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 0, -4 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="C1" type="Panel" parent="."]
+margin_left = -87.0
+margin_top = 5.5
+margin_right = -67.0
+margin_bottom = 8.5
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="C2" type="Panel" parent="."]
+margin_left = -65.0
+margin_top = 5.5
+margin_right = -45.0
+margin_bottom = 8.5
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="C3" type="Panel" parent="."]
+margin_left = -43.0
+margin_top = 5.5
+margin_right = -23.0
+margin_bottom = 8.5
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="C4" type="Panel" parent="."]
+margin_left = -21.0
+margin_top = 5.5
+margin_right = -1.0
+margin_bottom = 8.5
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="C5" type="Panel" parent="."]
+margin_left = 1.0
+margin_top = 5.5
+margin_right = 21.0
+margin_bottom = 8.5
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="C6" type="Panel" parent="."]
+margin_left = 23.0
+margin_top = 5.5
+margin_right = 43.0
+margin_bottom = 8.5
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="C7" type="Panel" parent="."]
+margin_left = 45.0
+margin_top = 5.5
+margin_right = 65.0
+margin_bottom = 8.5
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="C8" type="Panel" parent="."]
+margin_left = 67.0
+margin_top = 5.5
+margin_right = 87.0
+margin_bottom = 8.5
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
